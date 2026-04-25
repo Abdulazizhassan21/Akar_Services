@@ -22,8 +22,16 @@
               }
             ],
             "styles": [
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-            ]
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+          ]
           },
           "configurations": {
             "production": {
@@ -81,5 +89,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cc9e37b9-d495-4cdb-af65-618d5440f603"
   }
 }

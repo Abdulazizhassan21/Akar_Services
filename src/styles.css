@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+.bg-nav{
+    background-color: rgba(0, 0, 0, 0.09);
+    backdrop-filter: blur(3px);
+}
+
+
+.font-style{
+  font-family: 'Playfair Display', serif;
+}

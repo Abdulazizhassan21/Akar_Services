@@ -1,0 +1,31 @@
+
+
+    <div class=" container">
+  <div class="row">
+    <div class="col-8 margin-c">
+      <div class="me-3">
+        <img class=" object-fit-contain img-style" src="Group 34.png" alt="will not show ">
+      </div>
+    </div>
+
+
+      <div class="col-12 w-100">
+      <owl-carousel-o [options]="customOptions">
+        @for (img of imges; track $index) {
+            <ng-template carouselSlide>
+    <img class="object-fit-contain " width="200px" height="150px" [src]="img" alt="will not show ">
+  </ng-template>
+        }
+</owl-carousel-o>
+    </div>
+
+
+
+    <div class="col-8 offset-4 mt-3 ">
+      <button class="parent-style btn  w-50 mt-5"><a class=" font-style text-decoration-none text-light" routerLink="/">Regseter</a></button>
+    </div>
+    <div class="col-8 offset-4 mb-3 ">
+      <button (click)="getn()" class="parent-style w-50 btn  mt-4"><a class="font-style text-decoration-none text-light"  >LogIn</a></button>
+    </div>
+  </div>
+</div>
