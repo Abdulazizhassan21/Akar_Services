@@ -7,12 +7,24 @@ import { AboutComponent } from '../components/About/About.component';
 import { SeirviceComponent } from '../components/Seirvice/Seirvice.component';
 import { BookNowComponent } from '../components/BookNow/BookNow.component';
 import { ForgetPasswordComponent } from '../components/Forget-Password/Forget-Password.component';
+import { ProfileComponent } from '../components/profile/profile.component';
+import { RequstsComponent } from '../components/requsts/requsts.component';
+import { PaymentComponent } from '../components/payment/payment.component';
+import { PlumberComponent } from '../components/Plumber/Plumber.component';
+import { CarpenterComponent } from '../components/carpenter/carpenter.component';
+import { RegesterComponent } from '../components/regester/regester.component';
+import { MechanicalComponent } from '../components/mechanical/mechanical.component';
+import { CridetComponent } from '../components/cridet/cridet.component';
+import { PainterComponent } from '../components/painter/painter.component';
+import { Home_ServiceComponent } from '../components/Home_Service/Home_Service.component';
+import { AtherComponent } from '../components/ather/ather.component';
 
 export const routes: Routes = [
 
 
 {path:'' , redirectTo:'main', pathMatch:'full'},
 {path:"main" , component:MainPageComponent},
+{ path: 'login', component: LogInComponent },
 
 // {path:"login" , component:LogInComponent},
 // {path:"home" , component:HomeComponent},
@@ -22,17 +34,34 @@ export const routes: Routes = [
 
 
 {
-    path: '',
-    component: Navbar,
-    children: [
-      { path: 'login', component: LogInComponent },
-      { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'service', component: SeirviceComponent },
+  path: '',
+  component: Navbar,
+  children: [
+    { path: 'regester', component:RegesterComponent},
+    { path: "about", component: AboutComponent },
+    { path: "home", component: HomeComponent },
+    { path: 'pulber', component:PlumberComponent },
+    { path: 'carpenter', component:CarpenterComponent },
+    { path: 'mechanical', component:MechanicalComponent },
+    { path: 'painter', component:PainterComponent },
+    { path: 'home_s', component:Home_ServiceComponent },
+    { path: 'ather', component:AtherComponent },
+    {
+      path: 'service',
+      component: SeirviceComponent,
+      children: [
+          {path:'' , redirectTo:'profile', pathMatch:'full'},
+          {path:"profile" , component:ProfileComponent},
+          {path:"requsts" , component:RequstsComponent},
+          {path:"payment" , component:PaymentComponent},
+          {path:"credit" , component:CridetComponent},
+    ]
+  },
       { path: 'booknow', component: BookNowComponent },
       { path: 'forget', component: ForgetPasswordComponent },
     ]
-  }
+  },
+
 
 
 

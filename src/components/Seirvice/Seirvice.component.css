@@ -1,0 +1,137 @@
+
+.parent-sitting{
+  width: 100%;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+
+.sidebar{
+  background-color: #8e3238;
+  border-top-right-radius:20px;
+  height: 100vh;
+  position: relative;
+}
+
+
+.sidebar div{
+  list-style: none;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.icon-a{
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+a{
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  padding: 15px 30px;
+}
+
+
+.hr-1{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 92px;
+}
+.hr-2{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 156px;
+}
+.hr-3{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 222px;
+}
+.hr-4{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 222px;
+}
+
+
+.hr-5{
+      position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 100px;
+}
+
+.active{
+  background-color: #ffffff33;
+  width: 300px;
+  height: 55px;
+}
+
+
+    .info-label {
+      background-color: var(--primary-red);
+      color: white;
+      display: inline-block;
+      padding: 10px 30px;
+      border-radius: 15px;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+
+    .info-pill {
+      background-color: #b3b3b3;
+      padding: 10px 20px;
+      border-radius: 12px;
+      color: #333;
+    }
+
+    .separator {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .corner-shape {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 300px 300px;
+  border-color: transparent transparent #8e3238 transparent;
+  z-index: 1;
+}
+
+
+
+
+
+
+.logout a{
+  padding-left: 0px !important;
+}
+.logout{
+  margin-top: 400px;
+}
+
+
+
+.logout-icon{
+  font-size: 24px;
+  color: white;
+  padding-right: 10px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+
+.point{
+  cursor: pointer;
+}

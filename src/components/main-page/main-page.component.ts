@@ -16,36 +16,6 @@ export class MainPageComponent  {
 
 
 
-imges:string[] = ["Group 1.png","Group 2.png","Group 3.png","Group 4.png","Group 5.png",]
-
-
-customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    autoplay:true,
-    autoplaySpeed:2000,
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
-      }
-    },
-    nav: false
-  }
-
 
 
 
@@ -53,6 +23,10 @@ customOptions: OwlOptions = {
 
 getn() {
   this._Router.navigate([('/login')])
+}
+
+regester() {
+  this._Router.navigate([('/regester')])
 }
 
 

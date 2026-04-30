@@ -1,0 +1,61 @@
+.payment-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.payment-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: #a33b41;
+}
+
+.icon-wrapper {
+  font-size: 60px;
+  color: #a33b41;
+  margin-bottom: 20px;
+}
+
+.instapay-special .ip-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.instapay-special .arrows {
+  font-family: sans-serif;
+  letter-spacing: -4px;
+  font-size: 0.8em;
+}
+
+.payment-card h3 {
+  font-family: serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: #333333;
+  margin: 0;
+  font-size: 28px;
+}
+
+.min-color{
+  color: #a33b41;
+}

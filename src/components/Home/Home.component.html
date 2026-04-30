@@ -1,3 +1,58 @@
-<p>
-  Home works!
-</p>
+<div class="our-services-banner"></div>
+
+<section class="services-section">
+  <h2>Choose Your service</h2>
+
+<div  class="services-grid">
+  <div (click)="plubr()" class="service-card">
+    <div class="icon-frame">
+      <i class="fas fa-faucet-drip"></i>
+    </div>
+    <h3>Plumber</h3>
+    <p>Fast and reliable plumbing services. We fix all plumbing problems.</p>
+  </div>
+
+  <div (click)="carpenter()" class="service-card">
+    <div class="icon-frame">
+      <i class="fas fa-hammer"></i>
+    </div>
+    <h3>Carpenter</h3>
+    <p>Quality woodwork services. Strong and reliable repairs.</p>
+  </div>
+
+  <div (click)="mechanical()" class="service-card">
+    <div class="icon-frame">
+      <i class="fas fa-car-on"></i>
+    </div>
+    <h3>Mechanical</h3>
+    <p>Expert vehicle repair services. Fast and reliable maintenance.</p>
+  </div>
+
+  <div (click)="painter()" class="service-card">
+    <div class="icon-frame">
+      <i class="fas fa-paint-roller"></i>
+    </div>
+    <h3>Painter</h3>
+    <p>Expert vehicle repair services. Fast and reliable maintenance.</p>
+  </div>
+
+  <div (click)="Home_Service()" class="service-card">
+    <div class="icon-frame">
+      <i class="fas fa-broom"></i>
+    </div>
+    <h3>Home Service</h3>
+    <p>Trusted home services. Fast and reliable help.</p>
+  </div>
+
+  <div (click)="ather()" class="service-card">
+    <div class="icon-frame">
+      <i class="fas fa-home"></i>
+    </div>
+    <h3>Others</h3>
+    <p>General maintenance services. We handle all other tasks.</p>
+  </div>
+
+</div>
+</section>
+
+<router-outlet></router-outlet>

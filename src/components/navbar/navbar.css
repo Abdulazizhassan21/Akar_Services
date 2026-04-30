@@ -7,13 +7,6 @@
 }
 
 
-::ng-deep body{
-  background-image:url(../../../public/back.png) !important ;
-  background-repeat: no-repeat;
-  object-fit: contain;
-}
-
-
 
 .custom-h{
   height: 45px !important;

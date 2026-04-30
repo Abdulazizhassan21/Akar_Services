@@ -19,6 +19,9 @@ export class LogInComponent implements OnInit {
 resetpassword(){
   this.Router.navigate([('/forget')])
 }
+homepage(){
+  this.Router.navigate([('/home')])
+}
 
 
 

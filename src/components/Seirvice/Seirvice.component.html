@@ -1,3 +1,62 @@
-<p>
-  Seirvice works!
-</p>
+
+<div class="parent-sitting position-relative">
+<div class=" container-fluid">
+    <div class="row">
+    <div class="col-3  sidebar">
+        <div class="mt-5" routerLinkActive="active" ><a  routerLink="requsts"><i class="fa-solid fa-screwdriver-wrench icon-a"></i> requsts</a></div>
+        <hr class="hr-1">
+          <div routerLinkActive="active" ><a  routerLink="payment"><i class="fa-solid fa-credit-card icon-a"></i> payment</a></div>
+          <hr class="hr-2">
+          <div routerLinkActive="active" ><a  routerLink="profile"><i class="fa-solid fa-circle-user icon-a"></i>profile</a></div>
+          <hr class="hr-4">
+          <hr class="hr-5">
+          <li class="logout d-flex" >
+            <i class="material-icons me-2 logout-icon align-content-center">logout</i>
+            <a class="text-light point" (click)="backtomain()">logout</a>
+          </li>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+      <div class="corner-shape"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

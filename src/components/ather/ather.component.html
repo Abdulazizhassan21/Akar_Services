@@ -1,0 +1,89 @@
+<div class="parent">
+  <div class=" container">
+    <div class="row">
+      <div class="col-4 btn-emergency mt-5">Choose Painter </div>
+      <div class="col-8"></div>
+    <div class="col-4 mt-5">
+          <div class="painter-grid">
+        <!-- Painter 1 -->
+        <div class="card">
+            <img src="https://picsum.photos/seed/mostafa/100/100" alt="Mostafa Maher" class="avatar">
+            <div class="info">
+                <h3 class="name">Maher Gamal</h3>
+                <p class="id">ID: 256138</p>
+                <div class="rating">
+                    ★★★★<span class="empty">★</span>
+                </div>
+            </div>
+            <button (click)="check(tasks()[0].id)" [ngClass]=" tasks()[0].completed ? 'btn-none' : 'btn-select' " class="btn-select bettwen mt-4" >→</button>
+        </div>
+  </div>
+    </div>
+
+<!-- /////////////////////////one/////////////////////////// -->
+
+    <div class="col-4 mt-5">
+                <div class="card">
+            <img src="https://picsum.photos/seed/zaki/100/100" alt="Ahmed Zaki" class="avatar">
+            <div class="info">
+                <h3 class="name">Tarek hassan</h3>
+                <p class="id">ID: 356053</p>
+                <div class="rating">
+                    ★★★★★
+                </div>
+            </div>
+            <button (click)="check(tasks()[1].id)" [ngClass]=" tasks()[1].completed ? 'btn-none' : 'btn-select' " class="btn-select bettwen mt-4" >→</button>
+        </div>
+    </div>
+
+<!-- ///////////////////////////////////////tow///////////////////////////////////// -->
+
+<div class="col-4 mt-5">
+  <div class="card">
+              <img src="https://picsum.photos/seed/omar/100/100" alt="Omar Farouk" class="avatar">
+            <div class="info">
+                <h3 class="name">Marwan mohsen</h3>
+                <p class="id">ID: 156616</p>
+                <div class="rating">
+                    ★★★<span class="empty">★★</span>
+                </div>
+            </div>
+            <button (click)="check(tasks()[2].id)" [ngClass]=" tasks()[2].completed ? 'btn-none' : 'btn-select' " class="btn-select bettwen  mt-4" >→</button>
+            </div>
+          </div>
+
+          <div class="col-4 btn-emergency mt-5">Emergency</div>
+          <div class="col-8"></div>
+
+          <div class="col-4 mt-5">
+  <div class="card">
+              <img src="https://picsum.photos/seed/karim/100/100" alt="Karim Abdel" class="avatar">
+            <div class="info">
+                <h3 class="name">yahia karem</h3>
+                <p class="id">ID: 153151</p>
+                <div class="rating">
+                    ★★★<span class="empty">★★</span>
+                </div>
+            </div>
+            <button (click)="check(tasks()[3].id)" [ngClass]=" tasks()[3].completed ? 'btn-none' : 'btn-select' " class="btn-select bettwen  mt-4" >→</button>
+            </div>
+          </div>
+
+<div class="col-4 mt-5">
+  <div class="card">
+              <img src="https://picsum.photos/seed/tarek/100/100" alt="Tarek Kamel" class="avatar">
+            <div class="info">
+                <h3 class="name"> Kamel abdo</h3>
+                <p class="id">ID: 315534</p>
+                <div class="rating">
+                    ★★★<span class="empty">★★</span>
+                </div>
+            </div>
+            <button (click)="check(tasks()[4].id)" [ngClass]=" tasks()[4].completed ? 'btn-none' : 'btn-select' " class="btn-select bettwen  mt-4" >→</button>
+            </div>
+</div>
+
+
+</div>
+</div>
+</div>
