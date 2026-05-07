@@ -43,4 +43,17 @@ export class HomeComponent implements OnInit {
   }
 
 
+  Electrician(){
+    this._Router.navigate([('/elect')])
+  }
+
+  metal(){
+    this._Router.navigate([('/metal')])
+  }
+
+  dry(){
+    this._Router.navigate([('/dry')])
+  }
+
+
 }

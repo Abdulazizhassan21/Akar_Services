@@ -1,33 +1,28 @@
 <div class="payment-cards-container mt-5">
 
-    <div  routerLink="/service/credit" class="payment-card">
+    <div (click)="check(tasks()[0].id)"   [ngClass]=" tasks()[0].completed ?   'payment-card-after' : 'payment-card'">
       <div class="icon-wrapper">
         <i class="fa-solid fa-credit-card"></i>
       </div>
-      <h3>credit card</h3>
+      <h3>Visa</h3>
     </div>
 
-    <div class="payment-card">
+    <div (click)="check(tasks()[1].id)" [ngClass]=" tasks()[1].completed ?  'payment-card-after' : 'payment-card' ">
       <div class="icon-wrapper">
         <i class="fa-solid fa-hand-holding-dollar"></i>
       </div>
       <h3>cash on</h3>
     </div>
 
-    <div class="payment-card">
-      <div class="icon-wrapper instapay-special">
-        <span class=""><img class="  min-color" width="100px" height="75px" src="https://dl.svgcdn.com/png/arcticons/instapay-800.png" alt=""></span>
-      </div>
-      <h3>instapay</h3>
+    <div  class="w-100 parent-outlet"  >
+      @if (tasks()[0].completed) {
+        <app-cridet></app-cridet>
+      }
     </div>
-
-    <div class="payment-card">
-      <div class="icon-wrapper">
-        <i class="fa-solid fa-wallet"></i>
-      </div>
-      <h3>wallet</h3>
-    </div>
-
   </div>
+  @if (tasks()[0].completed || tasks()[1].completed) {
+    <button class="glass-btn font-style">Ceckout</button>
+  }
 
   <router-outlet></router-outlet>
+

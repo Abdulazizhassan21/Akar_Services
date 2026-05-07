@@ -1,20 +1,33 @@
 
-<div class="parent-sitting position-relative">
+<div class="parent-sitting position-relative ">
 <div class=" container-fluid">
     <div class="row">
-    <div class="col-3  sidebar">
-        <div class="mt-5" routerLinkActive="active" ><a  routerLink="requsts"><i class="fa-solid fa-screwdriver-wrench icon-a"></i> requsts</a></div>
-        <hr class="hr-1">
-          <div routerLinkActive="active" ><a  routerLink="payment"><i class="fa-solid fa-credit-card icon-a"></i> payment</a></div>
-          <hr class="hr-2">
-          <div routerLinkActive="active" ><a  routerLink="profile"><i class="fa-solid fa-circle-user icon-a"></i>profile</a></div>
-          <hr class="hr-4">
-          <hr class="hr-5">
-          <li class="logout d-flex" >
-            <i class="material-icons me-2 logout-icon align-content-center">logout</i>
-            <a class="text-light point" (click)="backtomain()">logout</a>
-          </li>
+<div class="col-3 sidebar d-flex flex-column p-0">
+  <div class="menu-items flex-grow-1 mt-5">
+    <div routerLinkActive="active" class="nav-item">
+      <a routerLink="requests"><i class="fa-solid fa-screwdriver-wrench icon-a"></i> requests</a>
     </div>
+
+    <div routerLinkActive="active" class="nav-item">
+      <a routerLink="payment"><i class="fa-solid fa-credit-card icon-a"></i> payment</a>
+    </div>
+
+    <div routerLinkActive="active" class="nav-item">
+      <a routerLink="about"><i class="fa-solid fa-circle-info icon-a"></i> about us</a>
+    </div>
+
+    <div routerLinkActive="active" class="nav-item">
+      <a routerLink="profile"><i class="fa-solid fa-circle-user icon-a"></i> profile</a>
+    </div>
+  </div>
+
+  <div class="logout-container">
+    <li class="logout d-flex align-items-center" (click)="backtomain()">
+      <i class="material-icons logout-icon">logout</i>
+      <a class="text-light point">logout</a>
+    </li>
+  </div>
+</div>
     <div class="col-9">
       <router-outlet></router-outlet>
       <div class="corner-shape"></div>

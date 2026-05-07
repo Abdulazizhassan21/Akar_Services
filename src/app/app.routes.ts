@@ -18,6 +18,9 @@ import { CridetComponent } from '../components/cridet/cridet.component';
 import { PainterComponent } from '../components/painter/painter.component';
 import { Home_ServiceComponent } from '../components/Home_Service/Home_Service.component';
 import { AtherComponent } from '../components/ather/ather.component';
+import { ElectricianComponent } from '../components/Electrician/Electrician.component';
+import { MetalComponent } from '../components/Metal/Metal.component';
+import { DryComponent } from '../components/Dry/Dry.component';
 
 export const routes: Routes = [
 
@@ -46,6 +49,9 @@ export const routes: Routes = [
     { path: 'painter', component:PainterComponent },
     { path: 'home_s', component:Home_ServiceComponent },
     { path: 'ather', component:AtherComponent },
+    { path: 'elect', component:ElectricianComponent },
+    { path: 'metal', component:MetalComponent },
+    { path: 'dry', component:DryComponent },
     {
       path: 'service',
       component: SeirviceComponent,
