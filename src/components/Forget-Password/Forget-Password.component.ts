@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-Forget-Password',
   templateUrl: './Forget-Password.component.html',
+  imports:[ReactiveFormsModule],
   styleUrls: ['./Forget-Password.component.css']
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _Router:Router) { }
 
   ngOnInit() {
   }
+
+
+  confirmpassword(){
+    this._Router.navigate([('/confirm')])
+  }
+
+
 
 
 
@@ -31,8 +41,13 @@ handleBack(current: HTMLInputElement, prev: HTMLInputElement | null) {
 }
 
 verifyOTP() {
-  console.log('تم إدخال الـ 6 أرقام بنجاح!');
 }
+
+
+  Sign_Up = new FormGroup({
+  email:new  FormControl("",[Validators.required,Validators.email]),
+})
+
 
 
 

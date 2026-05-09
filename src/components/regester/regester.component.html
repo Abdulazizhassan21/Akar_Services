@@ -2,21 +2,61 @@
 <div class="login-page ">
   <div class="   col-3 offset-8 login-card">
     <h2>regester now :</h2>
-    <div class="login-container">
+    <form action="" [formGroup]="Sign_Up">
+    <div  class="login-container">
   <div class="input-group">
-    <i class="fas fa-user icon"></i> <input type="text" placeholder="User Name">
+    <i class="fas fa-user icon"></i> <input formControlName="name" type="text" placeholder="User Name">
   </div>
+          @if (Sign_Up.get("name")?.invalid && Sign_Up.get("name")?.touched) {
+  <div>
+    @if (Sign_Up.get("name")?.getError("required")) {
+      <p class="text-danger ms-3">The UserName Is Required </p>
+    }
+    @if (Sign_Up.get("name")?.getError("minlength")) {
+      <p class="text-danger ms-3">Min Length Is 4 Caracters </p>
+    }
+    @if (Sign_Up.get("name")?.getError("maxlength")) {
+      <p class="text-danger ms-3">Max Length Is 20 Caracters </p>
+    }
+  </div>
+}
   <div class="input-group">
-    <i class="fas fa-envelope icon"></i> <input type="text" placeholder="email">
+    <i class="fas fa-envelope icon"></i> <input formControlName="email" type="text" placeholder="email">
   </div>
-  <div class="input-group d-flex">
-    <i class="fas fa-lock icon"></i> <input type="password" placeholder="Password">
+  @if (Sign_Up.get("email")?.invalid && Sign_Up.get("email")?.touched) {
+  <div>
+    @if (Sign_Up.get("email")?.getError("required")) {
+      <p class="text-danger ms-3">The email Is Required </p>
+    }
+    @if (Sign_Up.get("email")?.getError("email")) {
+      <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
+    }
   </div>
+}
+
   <div class="input-group d-flex">
-    <i class="fas fa-repeat icon"></i> <input type="password" placeholder="RePassword">
+    <i class="fas fa-lock icon"></i> <input formControlName="password" type="password" placeholder="Password">
+  </div>
+@if (Sign_Up.get("password")?.invalid && Sign_Up.get("password")?.touched) {
+  <div>
+    @if (Sign_Up.get("password")?.getError("required")) {
+      <p class="text-danger ms-3">The Password Is Required </p>
+    }
+    @if (Sign_Up.get("password")?.getError("minlength")) {
+      <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
+    }
+    @if (Sign_Up.get("password")?.getError("maxlength")) {
+      <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
+    }
+  </div>
+}
+
+  <div class="input-group d-flex">
+    <i class="fas fa-repeat icon"></i> <input formControlName="repassword" type="password" placeholder="RePassword">
   </div>
 </div>
-      <div (click)="loginpage()" class="glass-btn me-5 font-style">regest</div>
+</form>
+      <button [disabled]="Sign_Up.invalid"  (click)="loginpage()" class="glass-btn me-5 font-style">regest</button>
       <div (click)="haveacount()" class="forgot-password mt-3">already have an account?</div>
   </div>
 </div>

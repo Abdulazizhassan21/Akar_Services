@@ -21,6 +21,7 @@ import { AtherComponent } from '../components/ather/ather.component';
 import { ElectricianComponent } from '../components/Electrician/Electrician.component';
 import { MetalComponent } from '../components/Metal/Metal.component';
 import { DryComponent } from '../components/Dry/Dry.component';
+import { ConfirmpasswordComponent } from '../components/confirmpassword/confirmpassword.component';
 
 export const routes: Routes = [
 
@@ -65,6 +66,7 @@ export const routes: Routes = [
   },
       { path: 'booknow', component: BookNowComponent },
       { path: 'forget', component: ForgetPasswordComponent },
+      { path: 'confirm', component: ConfirmpasswordComponent },
     ]
   },
 

@@ -19,6 +19,10 @@ export class SeirviceComponent implements OnInit {
   backtomain(){
     this._Router.navigate([('/main')])
   }
+  aboutpage(){
+    this._Router.navigate([('/about')])
+  }
+
 
 
 
