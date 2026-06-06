@@ -1,92 +1,86 @@
-
-
-
-
-
-.card-number {
-    border: none;
-    font-size: 1.5rem;
-    letter-spacing: 4px;
-    color: #888;
-    width: 70%;
-    outline: none;
+.credit-card-form {
+  background: transparent;
+  width: 100%;
 }
 
-.brand-logo {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card-number-input {
+  border: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #555;
+  outline: none;
 }
 
-.brand-logo img {
-    width: 40px;
+.brand-logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 65px;
 }
 
-.brand-logo span {
-    font-size: 0.7rem;
-    font-weight: bold;
-    text-transform: lowercase;
+.brand-logo-box img {
+  width: 35px;
+  height: auto;
 }
 
-.divider {
-    border: 0;
-    width: 80%;
-    border-bottom: 1px solid black;
-    margin: 5px 0 25px 0;
+.brand-logo-box span {
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: lowercase;
+  color: #333;
 }
 
-.details-row {
-    gap: 40px;
+.form-divider {
+  border: 0;
+  border-bottom: 1px solid #222;
+  margin: 15px 0;
+  width: 100%;
 }
 
-.input-group {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    display: flex;
-    align-items: center;
+.input-underline-group {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
 }
 
-.input-group input {
-    border: none;
-    font-size: 1.8rem;
-    color: #555;
-    outline: none;
-    width: 140px;
-    background-color: transparent;
+.input-underline-group input {
+  border: none;
+  font-size: 1.1rem;
+  color: #444;
+  outline: none;
+  background: transparent;
 }
 
-.cvv {
-    width: 120px;
+.password-field {
+  position: relative;
 }
 
-.cvv input {
-    width: 70px;
-    letter-spacing: 2px;
-    margin-top: 7px;
-    height: 38px;
+.password-field i {
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #333;
+  margin-left: 5px;
 }
 
-.notes-input {
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: 75%;
-    padding: 10px 0;
+
+@media (min-width: 576px) {
+  .card-number-input {
     font-size: 1.4rem;
-    color: #888;
-    outline: none;
+    letter-spacing: 3px;
+  }
+  .input-underline-group input {
+    font-size: 1.3rem;
+  }
+  .brand-logo-box img {
+    width: 40px;
+  }
 }
 
-
-
-.bi-eye-slash {
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #000;
+@media (min-width: 768px) {
+  .card-number-input {
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+  }
 }
-
-.expiry{
-  width: 200px !important;
-}
-
-

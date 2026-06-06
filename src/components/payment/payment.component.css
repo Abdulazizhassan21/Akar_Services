@@ -1,100 +1,101 @@
+.payment-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .payment-cards-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  gap: 30px;
-  position: relative;
-  z-index: 10;
-  max-width: 800px;
+  gap: 20px;
+  width: 100%;
 }
 
 .payment-card {
   background: #ffffff;
   border-radius: 12px;
-  width: 350px;
-  height: 200px;
+  font-family: serif;
+  color: #333333;
+  width: 100%;
+  max-width: 340px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
 }
-.payment-card-after {
-  background: #ffffff;
-  border-radius: 12px;
-  width: 350px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: 1px solid transparent;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+.payment-card.active {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
   border-color: #a33b41;
 }
 
-
-
 .icon-wrapper {
-  font-size: 60px;
+  font-size: 50px;
   color: #a33b41;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-
-.instapay-special .ip-text {
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-  letter-spacing: -2px;
-}
-
-.instapay-special .arrows {
-  font-family: sans-serif;
-  letter-spacing: -4px;
-  font-size: 0.8em;
-}
-
 
 .payment-card h3 {
   font-family: serif;
-  font-weight: 400;
   text-transform: lowercase;
-  color: #333333;
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
 }
 
-.min-color{
-  color: #a33b41;
+.dynamic-content-area {
+  width: 100%;
 }
 
+.checkout-actions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 .glass-btn {
   background: #a33b41;
-  position: absolute;
-  bottom: 70px;
-  right: 350px;
-  backdrop-filter: blur(10px);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 15px 30px;
+  padding: 12px 30px;
   border-radius: 50px;
   font-size: 18px;
   cursor: pointer;
-  margin: 0px !important;
   text-align: center;
-  width: 320px;
-  transition: 0.3s;
+  width: 100%;
+  max-width: 320px;
+  transition: all 0.3s ease;
 }
 
 .glass-btn:hover {
   background: #9e2c32;
-  transform: scale(1.05);
+  transform: translateY(-3px);
 }
 
+@media (max-width: 767.98px) {
+  .payment-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .payment-card {
+    max-width: 100%;
+    height: 150px;
+  }
+
+  .icon-wrapper {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .glass-btn {
+    max-width: 100%;
+  }
+}

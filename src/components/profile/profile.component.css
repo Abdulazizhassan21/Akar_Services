@@ -1,40 +1,52 @@
-.profile-img{
-  width: 150px;
-  height: 150px;
+.profile-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.font-style {
+  font-family: 'Playfair Display', serif;
+}
+
+.user-info {
+  background-color: #8e3238;
+  padding: 8px 20px;
+  width: fit-content;
+  border-radius: 12px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.info-pill {
+  background-color: #e9ecef;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  width: 100%;
+}
+
+.separator {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 
-.user-info{
-    background-color: #8e3238;
-    padding: 7px 28px;
-    width: 130px;
-    border-radius: 15px;
-    color: white;
-    text-transform: capitalize;
+@media (max-width: 575.98px) {
+  .info-pill {
+    text-align: left;
+    padding: 14px 16px;
+  }
 }
-
-
-
-
-
-    .info-pill {
-      background-color: #b3b3b3;
-      padding: 10px 20px;
-      border-radius: 12px;
-      color: #333;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .separator {
-      font-size: 24px;
-      color: #333;
-    }
-
-
-
-
-
-
-
-

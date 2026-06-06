@@ -1,28 +1,36 @@
-<div class="payment-cards-container mt-5">
-
-    <div (click)="check(tasks()[0].id)"   [ngClass]=" tasks()[0].completed ?   'payment-card-after' : 'payment-card'">
+<div class="payment-wrapper py-4">
+  <div class="payment-cards-container">
+    <div (click)="selectPyment('Visa' ,currentRequestId)" (click)="check(tasks()[0].id)" [ngClass]="tasks()[0].completed ? 'payment-card active' : 'payment-card'">
       <div class="icon-wrapper">
         <i class="fa-solid fa-credit-card"></i>
       </div>
       <h3>Visa</h3>
     </div>
 
-    <div (click)="check(tasks()[1].id)" [ngClass]=" tasks()[1].completed ?  'payment-card-after' : 'payment-card' ">
+    <div (click)="selectPyment('cash' , currentRequestId)" (click)="check(tasks()[1].id)" [ngClass]="tasks()[1].completed ? 'payment-card active' : 'payment-card'">
       <div class="icon-wrapper">
         <i class="fa-solid fa-hand-holding-dollar"></i>
       </div>
-      <h3>cash on</h3>
-    </div>
-
-    <div  class="w-100 parent-outlet"  >
-      @if (tasks()[0].completed) {
-        <app-cridet></app-cridet>
-      }
+      <h3>cash</h3>
     </div>
   </div>
-  @if (tasks()[0].completed || tasks()[1].completed) {
-    <button class="glass-btn font-style">Ceckout</button>
-  }
 
-  <router-outlet></router-outlet>
+  <div class="dynamic-content-area mt-4">
+    @if (tasks()[0].completed) {
+      <app-cridet></app-cridet>
+    }
+  </div>
 
+  <div class="checkout-actions-container mt-5">
+    @if (tasks()[1].completed) {
+      <button (click)="navigateToRequest()" class="glass-btn font-style">
+        Total Cost Is: 500EG <br> Checkout
+      </button>
+    }
+    @if (tasks()[0].completed) {
+      <button (click)="navigateToRequest()" class="glass-btn font-style">Checkout</button>
+    }
+  </div>
+</div>
+
+<router-outlet></router-outlet>

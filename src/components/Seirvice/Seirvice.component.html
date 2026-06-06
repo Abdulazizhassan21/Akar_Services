@@ -1,75 +1,63 @@
+<div class="parent-sitting position-relative">
+  <div class="container-fluid w-100 p-0">
+    <div class="row m-0">
 
-<div class="parent-sitting position-relative ">
-<div class=" container-fluid">
-    <div class="row">
-<div class="col-3 sidebar d-flex flex-column p-0">
-  <div class="menu-items flex-grow-1 mt-5">
-    <div routerLinkActive="active" class="nav-item">
-      <a routerLink="requests"><i class="fa-solid fa-screwdriver-wrench icon-a"></i> requests</a>
-    </div>
+      <div class="col-12 col-md-4 col-lg-3 sidebar d-flex flex-column p-0" [ngClass]="{'active-sidebar': isSidebarOpen}">
+        <div class="menu-items flex-grow-1">
 
-    <div routerLinkActive="active" class="nav-item">
-      <a routerLink="payment"><i class="fa-solid fa-credit-card icon-a"></i> payment</a>
-    </div>
+  <button class="close-sidebar-btn d-md-none" (click)="isSidebarOpen = false">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
 
-    <div routerLinkActive="active" class="nav-item point">
-      <a (click)="aboutpage()"><i class="fa-solid fa-circle-info icon-a"></i> about us</a>
-    </div>
+          <div class="nav-item" routerLinkActive="active" (click)="isSidebarOpen = false">
+            <a routerLink="requsts">
+              <i class="fa-solid fa-screwdriver-wrench icon-a"></i>requests
+            </a>
+          </div>
 
-    <div routerLinkActive="active" class="nav-item">
-      <a routerLink="profile"><i class="fa-solid fa-circle-user icon-a"></i> profile</a>
+          <div class="nav-item" routerLinkActive="active" (click)="isSidebarOpen = false">
+            <a routerLink="payment">
+              <i class="fa-solid fa-credit-card icon-a"></i>payment
+            </a>
+          </div>
+
+          <div class="nav-item point" routerLinkActive="active" (click)="aboutpage(); isSidebarOpen = false">
+            <a id="about-link">
+              <i class="fa-solid fa-circle-info icon-a"></i>about us
+            </a>
+          </div>
+
+          <div class="nav-item" routerLinkActive="active" (click)="isSidebarOpen = false">
+            <a routerLink="profile">
+              <i class="fa-solid fa-circle-user icon-a"></i>profile
+            </a>
+          </div>
+
+        </div>
+
+        <div class="logout-container">
+          <div class="nav-item w-100" (click)="backtomain(); isSidebarOpen = false">
+            <a class="point d-flex align-items-center">
+              <i class="material-icons logout-icon">logout</i>logout
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 col-lg-9 main-content">
+
+        <div class="content-wrapper">
+
+          <button class="toggle-btn d-md-none" (click)="toggleSidebar()">
+            <i class="fa-solid" [ngClass]="isSidebarOpen ? 'fa-xmark' : 'fa-bars'"></i>
+          </button>
+
+          <router-outlet></router-outlet>
+
+        </div>
+
+      </div>
+
     </div>
   </div>
-
-  <div class="logout-container">
-    <li class="logout d-flex align-items-center" (click)="backtomain()">
-      <i class="material-icons logout-icon">logout</i>
-      <a class="text-light point">logout</a>
-    </li>
-  </div>
 </div>
-    <div class="col-9">
-      <router-outlet></router-outlet>
-      <div class="corner-shape"></div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,31 +1,39 @@
-<div class="w-100 ms-5 ">
+<div class="credit-card-form w-100 mt-4 px-2">
 
-<div class="d-flex margin-custom">
-      <input type="text" class="card-number bg-transparent" placeholder="****   ****   ****   ****">
-    <div class="brand-logo ms-3">
-      <img  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
-      <span>mastercard</span>
+  <div class="row align-items-center mb-3">
+    <div class="col-8 col-sm-9">
+      <input type="text" class="card-number-input w-100 bg-transparent" placeholder="**** **** **** ****">
     </div>
-</div>
-
-  <hr class="divider">
-
-  <div class="d-flex justify-content-start">
-    <div class="input-group expiry">
-      <input type="text" value="02 / 2028">
-    </div>
-
-    <div class="input-group cvv ms-5">
-      <input type="password" placeholder="***">
-      <i class="bi bi-eye-slash"></i>
+    <div class="col-4 col-sm-3 d-flex justify-content-end">
+      <div class="brand-logo-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+        <span>mastercard</span>
+      </div>
     </div>
   </div>
 
+  <hr class="form-divider">
 
-  <div class="notes-row mt-5 ">
-    <input type="text" placeholder="notes ..." class="notes-input bg-transparent">
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-sm-5 col-md-4">
+      <div class="input-underline-group">
+        <input type="text" class="w-100" value="02 / 2028">
+      </div>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4">
+      <div class="input-underline-group password-field">
+        <input type="password" class="w-100" placeholder="***">
+        <i class="bi bi-eye-slash"></i>
+      </div>
+    </div>
   </div>
 
+  <div class="row">
+    <div class="col-12">
+      <div class="input-underline-group">
+        <input type="text" placeholder="notes ..." class="w-100 bg-transparent">
+      </div>
+    </div>
+  </div>
 
-  <div class="red-corner"></div>
 </div>

@@ -1,45 +1,63 @@
-<div class="login-page ">
-  <div class="   col-3 offset-8 login-card">
-    <h2>Welcome to AKAR services</h2>
-    <form [formGroup]="Sign_Up">
-<div class="login-container">
-  <div class="input-group">
-    <i class="fas fa-user icon"></i> <input formControlName="email" type="text" placeholder="Email">
-  </div>
+<div class="login-page">
+  <div class="container-fluid h-100 d-flex align-items-center">
+    <div class="row w-100 m-0 justify-content-center justify-content-lg-end">
 
-            @if (Sign_Up.get("email")?.invalid && Sign_Up.get("email")?.touched) {
-  <div>
-    @if (Sign_Up.get("email")?.getError("required")) {
-      <p class="text-danger ms-3">The email Is Required </p>
-    }
-    @if (Sign_Up.get("email")?.getError("email")) {
-      <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
-    }
-  </div>
-}
+      <div class="col-11 col-sm-8 col-md-6 col-lg-4 col-xl-3 login-card">
+        <h2>Welcome to AKAR services</h2>
 
-  <div class="input-group d-flex">
-    <i class="fas fa-lock icon"></i> <input formControlName="password" type="password" placeholder="Password">
-  </div>
+        @if (MassegError) {
+          <div class="alert alert-danger p-2" role="alert">
+            {{ MassegError }}
+          </div>
+        }
 
-@if (Sign_Up.get("password")?.invalid && Sign_Up.get("password")?.touched) {
-  <div>
-    @if (Sign_Up.get("password")?.getError("required")) {
-      <p class="text-danger ms-3">The Email Is Required </p>
-    }
-    @if (Sign_Up.get("password")?.getError("minlength")) {
-      <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
-    }
-    @if (Sign_Up.get("password")?.getError("maxlength")) {
-      <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
-    }
-  </div>
-}
+        <form [formGroup]="LogIn" (ngSubmit)="login()">
+          <div class="login-container">
 
+            <div class="custom-input-group">
+              <i class="fas fa-user icon"></i>
+              <input formControlName="username" type="text" placeholder="User Name">
+            </div>
+            @if (LogIn.get("username")?.invalid && LogIn.get("username")?.touched) {
+              <div>
+                @if (LogIn.get("username")?.getError("required")) {
+                  <p class="text-danger ms-3">The Username Is Required</p>
+                }
+                @if (LogIn.get("username")?.getError("minlength")) {
+                  <p class="text-danger ms-3">Min Length Is 4 Characters</p>
+                }
+                @if (LogIn.get("username")?.getError("maxlength")) {
+                  <p class="text-danger ms-3">Max Length Is 20 Characters</p>
+                }
+              </div>
+            }
 
-</div>
-    </form>
-      <button [disabled]="Sign_Up.invalid" (click)="homepage()" class="glass-btn font-style">login</button>
-      <div (click)="resetpassword()" class="forgot-password">Forgot password?</div>
+            <div class="custom-input-group">
+              <i class="fas fa-lock icon"></i>
+              <input formControlName="password" type="password" placeholder="Password">
+            </div>
+            @if (LogIn.get("password")?.invalid && LogIn.get("password")?.touched) {
+              <div>
+                @if (LogIn.get("password")?.getError("required")) {
+                  <p class="text-danger ms-3">The Password Is Required</p>
+                }
+              </div>
+            }
+
+            <button type="submit" [disabled]="LogIn.invalid || isloding()" class="glass-btn font-style mt-3">
+              @if (isloding()) {
+                <span>Loading...</span>
+              } @else {
+                <span>Login</span>
+              }
+            </button>
+
+          </div>
+        </form>
+
+        <div (click)="resetpassword()" class="forgot-password mt-3">Forgot password?</div>
+      </div>
+
+    </div>
   </div>
 </div>

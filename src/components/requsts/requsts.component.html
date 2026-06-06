@@ -1,3 +1,57 @@
-<p>
-  requsts works!
-</p>
+<div class="requests-container py-4">
+
+  <div class="d-flex align-items-center mb-5">
+    <button class="btn btn-back me-3">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <div class="page-title-badge">
+      Requests
+    </div>
+  </div>
+
+
+
+    <div class="row g-4">
+
+
+      @for (item of newestRequests(); track $index) {
+
+
+              <div class="col-12 col-md-10 col-lg-8 col-xxl-6">
+        <div class="request-card">
+          <div class="job-badge">{{item.jobType}}</div>
+          <div class="card-body-content d-flex align-items-center justify-content-between">
+            <div class="request-details">
+              <p class="info-text">Name: {{item.workerName}}</p>
+              <p class="info-text">ID: {{item.workerId}}</p>
+              <p class="info-text">Date: {{item.appointmentDate}} | {{item.appointmentTime}}</p>
+              <div class="stars mb-2">
+                Rating: {{item.rating}}
+                <i class="fa-solid fa-star gold-star"></i>
+              </div>
+              <p class="info-text">Payment: {{getPaymentMethod(item.id)}}</p>
+<button class="btn btn-cansel" (click)="hello()">
+  @if (isOk) {
+    <span>Canceled</span>
+  } @else {
+    <span>Cancel Request</span>
+  }
+</button>
+            </div>
+            <div class="worker-meta text-center">
+              <img [src]="item.Imge" alt="Worker" class="worker-avatar mb-2">
+              <span class="time-text">&nbsp;</span> </div>
+          </div>
+        </div>
+      </div>
+      }
+
+
+</div>
+
+  </div>
+
+
+
+
+

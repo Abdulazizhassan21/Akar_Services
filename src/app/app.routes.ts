@@ -22,13 +22,16 @@ import { ElectricianComponent } from '../components/Electrician/Electrician.comp
 import { MetalComponent } from '../components/Metal/Metal.component';
 import { DryComponent } from '../components/Dry/Dry.component';
 import { ConfirmpasswordComponent } from '../components/confirmpassword/confirmpassword.component';
+import { authGuard } from './Guard/auth-guard';
+import { noAuthGuard } from './Guard/no-auth-guard';
 
 export const routes: Routes = [
 
 
 {path:'' , redirectTo:'main', pathMatch:'full'},
-{path:"main" , component:MainPageComponent},
-{ path: 'login', component: LogInComponent },
+{path:"main" , canActivate:[noAuthGuard], component:MainPageComponent},
+{ path: 'login', canActivate:[noAuthGuard], component: LogInComponent },
+{ path: 'regester',  canActivate:[noAuthGuard], component:RegesterComponent},
 
 // {path:"login" , component:LogInComponent},
 // {path:"home" , component:HomeComponent},
@@ -40,8 +43,8 @@ export const routes: Routes = [
 {
   path: '',
   component: Navbar,
+  canActivateChild:[authGuard],
   children: [
-    { path: 'regester', component:RegesterComponent},
     { path: "about", component: AboutComponent },
     { path: "home", component: HomeComponent },
     { path: 'pulber', component:PlumberComponent },
@@ -56,6 +59,7 @@ export const routes: Routes = [
     {
       path: 'service',
       component: SeirviceComponent,
+      canActivateChild:[authGuard],
       children: [
           {path:'' , redirectTo:'profile', pathMatch:'full'},
           {path:"profile" , component:ProfileComponent},
@@ -65,8 +69,8 @@ export const routes: Routes = [
     ]
   },
       { path: 'booknow', component: BookNowComponent },
-      { path: 'forget', component: ForgetPasswordComponent },
-      { path: 'confirm', component: ConfirmpasswordComponent },
+      { path: 'forget', canActivate:[noAuthGuard], component: ForgetPasswordComponent },
+      { path: 'confirm',  canActivate:[noAuthGuard], component: ConfirmpasswordComponent },
     ]
   },
 

@@ -1,0 +1,191 @@
+.btn-back {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-back:hover {
+  transform: scale(1.1);
+}
+
+.page-title-badge {
+  background-color: #8e3238;
+  color: #ffffff;
+  padding: 6px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(142, 50, 56, 0.2);
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80%;
+  height: 3px;
+  background-color: #000000;
+}
+
+.section-arrow {
+  font-size: 1.2rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.request-card {
+  background-color: #d9d9d9;
+  border-radius: 25px;
+  position: relative;
+  margin-top: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.job-badge {
+  background-color: #8e3238;
+  color: #ffffff;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cansel {
+  background-color: #8e3238;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.btn-cansel:hover {
+  background-color: #6b2428;
+  color: white;
+}
+
+.card-body-content {
+  padding: 30px 15px 15px 15px;
+  flex-direction: column-reverse;
+  gap: 15px;
+}
+
+.request-details {
+  width: 100%;
+}
+
+.info-text {
+  font-size: 0.95rem;
+  color: #333333;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.gold-star {
+  color: #ffb800;
+  margin-right: 2px;
+}
+
+.dark-star {
+  color: #333333;
+  margin-right: 2px;
+}
+
+.worker-meta {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.worker-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-text {
+  font-size: 0.9rem;
+  color: #333333;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  .page-title-badge {
+    padding: 8px 45px;
+    font-size: 1.1rem;
+  }
+
+  .request-card {
+    border-radius: 30px;
+  }
+
+  .job-badge {
+    left: -10px;
+    padding: 8px 25px;
+    font-size: 1rem;
+  }
+
+  .card-body-content {
+    flex-direction: row;
+    align-items: center;
+    padding: 35px 20px 20px 20px;
+  }
+
+  .worker-meta {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .worker-avatar {
+    width: 65px;
+    height: 65px;
+  }
+
+  .btn-cansel {
+    width: auto;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}

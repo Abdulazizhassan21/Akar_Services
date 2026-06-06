@@ -1,62 +1,92 @@
+<div class="login-page">
+  <div class="container-fluid h-100 d-flex align-items-center">
+    <div class="row w-100 m-0 justify-content-center justify-content-lg-end">
 
-<div class="login-page ">
-  <div class="   col-3 offset-8 login-card">
-    <h2>regester now :</h2>
-    <form action="" [formGroup]="Sign_Up">
-    <div  class="login-container">
-  <div class="input-group">
-    <i class="fas fa-user icon"></i> <input formControlName="name" type="text" placeholder="User Name">
-  </div>
-          @if (Sign_Up.get("name")?.invalid && Sign_Up.get("name")?.touched) {
-  <div>
-    @if (Sign_Up.get("name")?.getError("required")) {
-      <p class="text-danger ms-3">The UserName Is Required </p>
-    }
-    @if (Sign_Up.get("name")?.getError("minlength")) {
-      <p class="text-danger ms-3">Min Length Is 4 Caracters </p>
-    }
-    @if (Sign_Up.get("name")?.getError("maxlength")) {
-      <p class="text-danger ms-3">Max Length Is 20 Caracters </p>
-    }
-  </div>
-}
-  <div class="input-group">
-    <i class="fas fa-envelope icon"></i> <input formControlName="email" type="text" placeholder="email">
-  </div>
-  @if (Sign_Up.get("email")?.invalid && Sign_Up.get("email")?.touched) {
-  <div>
-    @if (Sign_Up.get("email")?.getError("required")) {
-      <p class="text-danger ms-3">The email Is Required </p>
-    }
-    @if (Sign_Up.get("email")?.getError("email")) {
-      <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
-    }
-  </div>
-}
+      <div class="col-11 col-sm-8 col-md-6 col-lg-4 col-xl-3 login-card">
+        <h2>register now :</h2>
 
-  <div class="input-group d-flex">
-    <i class="fas fa-lock icon"></i> <input formControlName="password" type="password" placeholder="Password">
-  </div>
-@if (Sign_Up.get("password")?.invalid && Sign_Up.get("password")?.touched) {
-  <div>
-    @if (Sign_Up.get("password")?.getError("required")) {
-      <p class="text-danger ms-3">The Password Is Required </p>
-    }
-    @if (Sign_Up.get("password")?.getError("minlength")) {
-      <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
-    }
-    @if (Sign_Up.get("password")?.getError("maxlength")) {
-      <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
-    }
-  </div>
-}
+        <form [formGroup]="Sign_Up" (ngSubmit)="Signin()">
+          <div class="login-container">
 
-  <div class="input-group d-flex">
-    <i class="fas fa-repeat icon"></i> <input formControlName="repassword" type="password" placeholder="RePassword">
-  </div>
-</div>
-</form>
-      <button [disabled]="Sign_Up.invalid"  (click)="loginpage()" class="glass-btn me-5 font-style">regest</button>
-      <div (click)="haveacount()" class="forgot-password mt-3">already have an account?</div>
+            <div class="custom-input-group">
+              <i class="fas fa-user icon"></i>
+              <input formControlName="username" type="text" placeholder="User Name">
+            </div>
+            @if (Sign_Up.get("username")?.invalid && Sign_Up.get("username")?.touched) {
+              <div>
+                @if (Sign_Up.get("username")?.getError("required")) {
+                  <p class="text-danger ms-3">The Username Is Required</p>
+                }
+                @if (Sign_Up.get("username")?.getError("minlength")) {
+                  <p class="text-danger ms-3">Min Length Is 4 Characters</p>
+                }
+                @if (Sign_Up.get("username")?.getError("maxlength")) {
+                  <p class="text-danger ms-3">Max Length Is 20 Characters</p>
+                }
+              </div>
+            }
+
+            <div class="custom-input-group">
+              <i class="fas fa-envelope icon"></i>
+              <input formControlName="email" type="text" placeholder="Email">
+            </div>
+            @if (Sign_Up.get("email")?.invalid && Sign_Up.get("email")?.touched) {
+              <div>
+                @if (Sign_Up.get("email")?.getError("required")) {
+                  <p class="text-danger ms-3">The Email Is Required</p>
+                }
+                @if (Sign_Up.get("email")?.getError("email")) {
+                  <p class="text-danger ms-3">Please enter a valid email (must include @)</p>
+                }
+              </div>
+            }
+
+            <div class="custom-input-group">
+              <i class="fas fa-lock icon"></i>
+              <input formControlName="password" type="password" placeholder="Password">
+            </div>
+            @if (Sign_Up.get("password")?.invalid && Sign_Up.get("password")?.touched) {
+              <div>
+                @if (Sign_Up.get("password")?.getError("required")) {
+                  <p class="text-danger ms-3">The Password Is Required</p>
+                }
+                @if (Sign_Up.get("password")?.getError("pattern")) {
+                  <p class="text-danger ms-3">Must include Uppercase, Lowercase, Number & Special Character</p>
+                }
+              </div>
+            }
+
+            <div class="custom-input-group">
+              <i class="fas fa-phone icon"></i>
+              <input formControlName="phone" type="text" placeholder="Phone Number (Optional)">
+            </div>
+            @if (Sign_Up.get("phone")?.invalid && Sign_Up.get("phone")?.touched) {
+              <div>
+                @if (Sign_Up.get("phone")?.getError("pattern")) {
+                  <p class="text-danger ms-3">Invalid Egyptian phone number (e.g., 010..., 011..., 012..., 015...)</p>
+                }
+              </div>
+            }
+
+            @if (MassegError) {
+              <div class="alert alert-danger mt-2 ms-3 p-2" role="alert">
+                {{ MassegError }}
+              </div>
+            }
+
+            <button type="submit" [disabled]="Sign_Up.invalid || isloding()" class="glass-btn font-style mt-3">
+              @if (isloding()) {
+                <span>Loading...</span>
+              } @else {
+                <span>Register</span>
+              }
+            </button>
+
+          </div>
+        </form>
+        <div (click)="haveacount()" class="forgot-password mt-3">already have an account?</div>
+      </div>
+
+    </div>
   </div>
 </div>
